@@ -1,0 +1,46 @@
+{
+  "name": "@archastro/intern",
+  "version": "0.1.0",
+  "description": "Command-line client for building and publishing TryIntern sites",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "intern": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "skills"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArchAstro/intern.git"
+  },
+  "homepage": "https://tryintern.dev",
+  "keywords": [
+    "tryintern",
+    "cli",
+    "static-site",
+    "mcp"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepack": "npm run build",
+    "pretest": "npm run build",
+    "check": "npm test && npm run test:package",
+    "test:package": "npm pack --dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "5.9.3",
+    "vitest": "^4.1.8"
+  }
+}
