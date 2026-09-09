@@ -7,7 +7,8 @@ Intern MCP package.
 
 1. Keep the GitHub repository private until its owner deliberately makes it
    public.
-2. Create the `npm-release` GitHub environment and add the required reviewer.
+2. The repository has an `npm-release` GitHub environment. Add a required
+   reviewer when the repository visibility and GitHub plan support that rule.
 3. Publish the initial `@archastro/intern` package version through an approved
    bootstrap path if npm requires the package to exist before configuring a
    trusted publisher.

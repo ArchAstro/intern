@@ -5,8 +5,8 @@ name: release
 #   2. Rebase-merge the version PR so main records the release
 #   3. Tag that exact main commit and dispatch publish.yml
 #
-# Publishing uses npm Trusted Publishing through publish.yml. The protected
-# npm-release environment remains the approval boundary for npm publication.
+# Publishing uses npm Trusted Publishing through publish.yml. The named
+# npm-release environment scopes the OIDC publisher identity.
 
 on:
   workflow_dispatch:
