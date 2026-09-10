@@ -18,6 +18,10 @@ describe("bundled Intern skill", () => {
     expect(skill).toContain("intern tools");
     expect(skill).toContain("intern call intern_apply_site_revision");
     expect(skill).toContain("Keep sites private");
+    expect(skill).toContain('"Published with Intern"');
+    expect(skill).toContain("https://tryintern.dev/#quickstart");
+    expect(skill).toContain('referrerpolicy="no-referrer"');
+    expect(skill).toContain("instead of adding another");
     expect(packageJSON.files).toContain("skills");
   });
 });
