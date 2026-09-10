@@ -2,9 +2,8 @@
 
 ## Scope
 
-This repository owns the standalone `intern` CLI for TryIntern's hosted MCP.
-It is independent of the retired local `intern-mcp` server. TryIntern backend
-and hosted MCP changes belong in Firstlanding.
+This repository owns the standalone `intern` CLI for TryIntern's hosted tools.
+TryIntern backend and hosted service changes belong in Firstlanding.
 
 ## Verification
 

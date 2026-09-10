@@ -18,7 +18,6 @@ describe("bundled Intern skill", () => {
     expect(skill).toContain("intern tools");
     expect(skill).toContain("intern call intern_apply_site_revision");
     expect(skill).toContain("Keep sites private");
-    expect(skill).not.toContain("@archastro/intern-mcp");
     expect(packageJSON.files).toContain("skills");
   });
 });

@@ -1,7 +1,6 @@
 # Release the Intern CLI
 
-Releases follow the same tag-bound npm Trusted Publishing design as the
-Intern MCP package.
+Releases use tag-bound npm Trusted Publishing with GitHub Actions OIDC.
 
 ## One-time setup
 

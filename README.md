@@ -1,9 +1,8 @@
 # Intern CLI
 
-`intern` gives coding agents and people the same hosted tools available from
-TryIntern's remote MCP, without requiring MCP support in the coding agent.
-It talks directly to `https://tryintern.dev/mcp`; it is unrelated to the retired
-local `intern-mcp` server.
+`intern` gives coding agents and people direct access to TryIntern's hosted
+tools, without requiring MCP support in the coding agent. It talks directly to
+`https://tryintern.dev/mcp`.
 
 ## Install
 

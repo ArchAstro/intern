@@ -6,8 +6,7 @@ description: Build, publish, inspect, and share TryIntern sites with the `intern
 # Intern CLI
 
 Use the `intern` command to work with TryIntern through its hosted control
-plane. The CLI returns JSON and exposes the same live tools as the hosted
-Intern MCP.
+plane. The CLI returns JSON and exposes TryIntern's live tool catalog.
 
 ## Install and authenticate
 

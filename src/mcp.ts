@@ -91,7 +91,7 @@ export class McpClient {
         response.status === 401 ? "auth_required" : "mcp_http_error",
         response.status === 401
           ? "Intern authorization is no longer valid; run `intern login` again"
-          : `Intern MCP request failed with HTTP ${response.status}`,
+          : `Intern service request failed with HTTP ${response.status}`,
         safeRemoteBody(body),
       );
     }
@@ -103,14 +103,14 @@ export class McpClient {
     if (envelope.error) {
       throw new InternError(
         "mcp_protocol_error",
-        envelope.error.message ?? "Intern MCP returned a protocol error",
+        envelope.error.message ?? "Intern service returned a protocol error",
         envelope.error,
       );
     }
     if (!("result" in envelope)) {
       throw new InternError(
         "mcp_protocol_error",
-        "Intern MCP response omitted a result",
+        "Intern service response omitted a result",
       );
     }
     return envelope.result;
@@ -158,7 +158,7 @@ function parseEnvelope(
     if (!candidate)
       throw new InternError(
         "mcp_protocol_error",
-        "Intern MCP returned an empty event stream",
+        "Intern service returned an empty event stream",
       );
     value = parseJSON(candidate);
   } else {
@@ -167,7 +167,7 @@ function parseEnvelope(
   if (!isRecord(value) || value.jsonrpc !== "2.0" || value.id !== expectedId) {
     throw new InternError(
       "mcp_protocol_error",
-      "Intern MCP returned an invalid JSON-RPC response",
+      "Intern service returned an invalid JSON-RPC response",
     );
   }
   return value as unknown as JsonRpcResponse;
@@ -179,7 +179,7 @@ function parseJSON(value: string): unknown {
   } catch {
     throw new InternError(
       "mcp_protocol_error",
-      "Intern MCP returned invalid JSON",
+      "Intern service returned invalid JSON",
     );
   }
 }
@@ -199,7 +199,7 @@ function resultField(value: unknown, field: string): unknown {
   if (!(field in result)) {
     throw new InternError(
       "mcp_protocol_error",
-      `Intern MCP response omitted ${field}`,
+      `Intern service response omitted ${field}`,
     );
   }
   return result[field];
@@ -209,7 +209,7 @@ function asRecord(value: unknown): Record<string, unknown> {
   if (!isRecord(value))
     throw new InternError(
       "mcp_protocol_error",
-      "Intern MCP returned an invalid result",
+      "Intern service returned an invalid result",
     );
   return value;
 }
