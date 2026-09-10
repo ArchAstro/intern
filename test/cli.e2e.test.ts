@@ -228,8 +228,15 @@ describe("Intern CLI hosted publishing", () => {
 
     origin = await listen(server);
 
+    const packageMetadata = JSON.parse(
+      await fs.readFile(new URL("../package.json", import.meta.url), "utf8"),
+    ) as { version: string };
     const version = await runCLI(["--version"], {});
-    expect(version).toMatchObject({ code: 0, stdout: "0.1.0\n", stderr: "" });
+    expect(version).toMatchObject({
+      code: 0,
+      stdout: `${packageMetadata.version}\n`,
+      stderr: "",
+    });
 
     // Authenticate through a real CLI process and its ephemeral loopback callback.
     const loginProcess = startCLI(["login", "--no-open", "--origin", origin], {
