@@ -1,6 +1,6 @@
 {
   "name": "@archastro/intern",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Command-line client for building and publishing TryIntern sites",
   "type": "module",
   "license": "MIT",
