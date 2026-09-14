@@ -4,6 +4,22 @@
 tools, without requiring MCP support in the coding agent. It talks directly to
 `https://tryintern.dev/mcp`.
 
+## Connect through MCP
+
+If your agent supports remote MCP, add `https://tryintern.dev/mcp` and follow
+the sign-in prompt. No local MCP package is needed. See the
+[connection guide](https://tryintern.dev/mcp/guide.md) for host-specific setup.
+
+This repository also holds the hosted connector's marketplace manifests.
+See the [listing kit](docs/listing-kit.md). These files describe the hosted
+service, not a local MCP server supplied by the CLI.
+
+Gemini CLI also discovers the repository's `skills/intern` instructions when
+installing the extension. This shared skill uses an existing hosted MCP
+connection directly; its CLI instructions apply to terminal use without that
+connection or an explicit CLI request. The hosted extension does not require
+installing the npm package.
+
 ## Install
 
 ```sh
