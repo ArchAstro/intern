@@ -2,24 +2,20 @@
 
 Releases use tag-bound npm Trusted Publishing with GitHub Actions OIDC.
 
-## One-time setup
+## Publisher configuration
 
-1. Keep the GitHub repository private until its owner deliberately makes it
-   public.
-2. The repository has an `npm-release` GitHub environment. Add a required
-   reviewer when the repository visibility and GitHub plan support that rule.
-3. Publish the initial `@archastro/intern` package version through an approved
-   bootstrap path if npm requires the package to exist before configuring a
-   trusted publisher.
-4. In npm package settings, configure a GitHub Actions trusted publisher:
+The repository is public. The initial `@archastro/intern@1.0.0` release was
+published on September 10, 2026. npm Trusted Publishing is configured for:
    - organization: `ArchAstro`
    - repository: `intern`
    - workflow: `publish.yml`
    - environment: `npm-release`
 
-The workflow intentionally omits npm provenance while the source repository is
-private. Add `--provenance` to the publish command after the repository becomes
-public.
+Keep the workflow filename and environment aligned with that configuration.
+Do not republish 1.0.0; subsequent releases need a new version.
+The initial release used interactive npm authentication. Version 1.0.1 verified
+the GitHub Actions OIDC path on September 10, 2026, including signed provenance.
+See the [successful publish run](https://github.com/ArchAstro/intern/actions/runs/34520272695).
 
 ## Subsequent releases
 

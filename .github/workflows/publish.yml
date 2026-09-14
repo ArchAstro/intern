@@ -65,8 +65,6 @@ jobs:
             exit 1
           fi
 
-      # npm Trusted Publishing supports private source repositories, but npm
-      # provenance attestations do not. Add --provenance after this repo is public.
       - name: Publish package through npm OIDC
         run: npm publish --access public
 

@@ -35,7 +35,10 @@
     "test": "vitest run",
     "prepack": "npm run build",
     "pretest": "npm run build",
-    "check": "npm test && npm run test:package",
+    "check": "npm test && npm run test:distribution && npm run test:package",
+    "test:distribution": "node --test test/distribution-contract.mjs",
+    "test:remote-install": "node --test test/remote-install.e2e.mjs",
+    "test:gemini-install": "node --test test/gemini-install.e2e.mjs",
     "test:package": "npm pack --dry-run"
   },
   "devDependencies": {
